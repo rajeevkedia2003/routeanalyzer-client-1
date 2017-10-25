@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-xs-5"></div>
+	<div class="col-xs-2"><button class="btn btn-primary" (click)="solveMaze()">Find Shortest Path</button></div>
+	<div class="col-xs-5"></div>
+</div>
+<hr>
+<div class="row">		
+	<div class="col-xs-12" *ngIf="maze.totalStepsToSolve">		
+		<span>Total Steps taken to solve the maze is {{ maze.totalStepsToSolve }}</span>		
+	</div>
+	<div class="col-xs-12">
+		<table border="1">
+			<tr *ngFor="let mazeRow of maze.mazeElements">
+				<td *ngFor="let mazeEl of mazeRow"> 
+					<!--span [ngClass]="{blocker: mazeEl === '#'}">{{mazeEl}}</span-->
+					<span [ngClass]="{selected: mazeEl === '@'}">{{mazeEl}}</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
